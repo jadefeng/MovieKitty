@@ -48,7 +48,10 @@ var searchMovies = function(event) {
 				console.log("Finding the poster URL");
 				$.ajax([omdbUrl, 'i=', movie_imdbID].join(''), {dataType: 'json'}).done( function(result2) {
 					
-					var poster_url = result2.Poster;
+					var poster_url = "http://img.omdbapi.com/?i=" + result2.imdbID + "&apikey=fdb29024";
+						// result2.Poster;
+					console.log("result", result2);
+					console.log("poster_url", poster_url);
 					if (poster_url === "N/A") {
 						poster_url = 'http://data2.whicdn.com/images/63702297/large.jpg';
 					}
